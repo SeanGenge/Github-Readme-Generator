@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{section.title}}</h5>
+        <p class="card-text">{{section.description}}</p>
+        {{#ifEquals section.type sectionTypes.singleLine}}
+            <input class="form-control">{{section.data}}</input>
+        {{/ifEquals}}
+        {{#ifEquals section.type sectionTypes.multiLine}}
+            <textarea class="form-control" rows="4">{{section.data}}</textarea>
+        {{/ifEquals}}
+        {{#ifEquals section.type sectionTypes.dropDown}}
+            <select class="form-select" aria-label="Default select example">
+                {{#each section.options as |option|}}
+                    <option value={{option}}>{{option}}</option>
+                {{/each}}
+            </select>
+        {{/ifEquals}}
+    </div>
+</div>

@@ -20,5 +20,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 app.listen(PORT, () => {
-    console.log("Github readme generator listening on http://localhost:3001");
+    console.log("Github readme generator now listening on http://localhost:3001");
 });

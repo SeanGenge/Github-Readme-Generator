@@ -1,11 +1,20 @@
-const routes = require('express').Router();
-const sections = require('../public/js/index');
+const router = require('express').Router();
+const loadSections = require('../seeds/loadSectionData');
+const enums = require('../utils/enums');
 
-routes.get('/', async (req, res) => {
-    res.render('home', {
-        sections: sections.displayedSections,
-        SectionTypes: sections.SectionTypes
-    });
+router.get('/', async (req, res) => {
+    try {
+        let sections = loadSections.createSections();
+        let SectionTypes = enums.SectionTypes;
+        
+        res.render('home', {
+            sections: sections,
+            SectionTypes: SectionTypes
+        });
+    }
+    catch(err) {
+        res.status(500).json(err);
+    }
 });
 
-module.exports = routes;
+module.exports = router;

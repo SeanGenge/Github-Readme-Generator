@@ -14,13 +14,6 @@ function createSections() {
     return sections;
 }
 
-function createSortableSections() {
-    new sortable("#section-container", {
-        animation: 150,
-        ghostClass: 'blue-background-class'
-    });
-}
-
 module.exports = {
     createSections
 };

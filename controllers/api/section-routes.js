@@ -3,7 +3,6 @@ const loadSections = require('../../seeds/loadSectionData');
 const enums = require('../../utils/enums');
 
 router.get('/', (req, res) => {
-    console.log("testing");
     let sections = loadSections.createSections();
     
     res.status(200).json(sections);

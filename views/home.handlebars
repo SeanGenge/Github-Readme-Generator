@@ -1,5 +1,10 @@
-<div id="section-container" class="container">
-    {{#each sections as |section|}}
-        {{> sectionCard section=section sectionTypes=../SectionTypes}}
-    {{/each}}
+<div class="container">
+    <form id="readme-form">
+        <button type="submit" class="btn btn-primary" id="generate-readme">Generate Readme</button>
+        <div id="section-container">
+            {{#each sections as |section|}}
+                {{> sectionCard section=section sectionTypes=../SectionTypes}}
+            {{/each}}
+        </div>
+    </form>
 </div>

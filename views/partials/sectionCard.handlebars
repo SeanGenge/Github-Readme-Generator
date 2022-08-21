@@ -3,13 +3,13 @@
         <h5 class="card-title">{{section.title}}</h5>
         <p class="card-text">{{section.description}}</p>
         {{#ifEquals section.type sectionTypes.singleLine}}
-            <input class="form-control">{{section.data}}</input>
+            <input class="form-control" name="{{section.title}}">{{section.data}}</input>
         {{/ifEquals}}
         {{#ifEquals section.type sectionTypes.multiLine}}
-            <textarea class="form-control" rows="4">{{section.data}}</textarea>
+            <textarea class="form-control" rows="4" name="{{section.title}}">{{section.data}}</textarea>
         {{/ifEquals}}
         {{#ifEquals section.type sectionTypes.dropDown}}
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" name="{{section.title}}">
                 {{#each section.options as |option|}}
                     <option value={{option}}>{{option}}</option>
                 {{/each}}

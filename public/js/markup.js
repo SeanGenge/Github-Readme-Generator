@@ -6,11 +6,19 @@ async function generateReadme(e) {
     try {
         let form = document.getElementById("readme-form");
         let sectionsJson = await fetch('/api/section')
-                           .then(res => res.json())
-                           .then(data => data)
-                           .catch(err => console.log(err));
-    
-    
+        .then(res => res.json())
+        .then(data => data)
+        .catch(err => console.log(err));
+        let elements = form.elements;
+        
+        for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            
+            let name = element.name;
+            let value = element.value;
+            
+            
+        }
     }
     catch(err) {
         console.log(err);

@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card custom-card">
     <div class="card-body">
         <h5 class="card-title">{{section.title}}</h5>
         <p class="card-text">{{section.description}}</p>
@@ -11,7 +11,7 @@
         {{#ifEquals section.type sectionTypes.dropDown}}
             <select class="form-select" aria-label="Default select example" name="{{section.title}}">
                 {{#each section.options as |option|}}
-                    <option value={{option}}>{{option}}</option>
+                    <option value="{{option}}">{{option}}</option>
                 {{/each}}
             </select>
         {{/ifEquals}}

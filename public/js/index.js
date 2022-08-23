@@ -3,6 +3,7 @@ function initSortableSections() {
     
     new Sortable(sectionContainer, {
         animation: 150,
+        handle: '.handle',
         ghostClass: 'blue-background-ghost'
     });
 }

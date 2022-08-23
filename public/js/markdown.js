@@ -20,25 +20,22 @@ async function generateReadme(e) {
         // Change to true when it sees the table of contents card. Only then will it record table of contents
         let recordTableOfContents = false;
         
+        // Using the order of the elements on the HTML form to generate the table of contents and data correctly
         for (let i = 0; i < elements.length; i++) {
             let element = elements[i];
             
             if (element.type === "submit") continue;
             
             let id = element.id;
-            let name = element.name;
             let data = element.value;
-            let mk = '';
             
             switch(id) {
                 case "stitle":
-                    mk = getTitleMarkdown(data, licenseObj);
-                    if (mk !== '') markdown.push(mk);
+                    if (data !== '') markdown.push(getTitleMarkdown(data, licenseObj));
                     break;
                 case "sdescription":
-                    mk = getDescriptionMarkdown(data);
-                    if (mk !== '') {
-                        markdown.push(mk);
+                    if (data !== '') {
+                        markdown.push(getDescriptionMarkdown(data));
                         if (recordTableOfContents) tableOfContentsMarkdown += '- [Description](#description)\n\n';
                     }
                     break;
@@ -47,44 +44,38 @@ async function generateReadme(e) {
                     markdown.push("[toc]");
                     break;
                 case "sinstallation":
-                    mk = getInstallationMarkdown(data);
-                    if (mk !== '') {
-                        markdown.push(mk);
+                    if (data !== '') {
+                        markdown.push(getInstallationMarkdown(data));
                         if (recordTableOfContents) tableOfContentsMarkdown += '- [Installation](#installation)\n\n';
                     } 
                     break;
                 case "stests":
-                    mk = getTestsMarkdown(data);
-                    if (mk !== '') {
-                        markdown.push(mk);
+                    if (data !== '') {
+                        markdown.push(getTestsMarkdown(data));
                         if (recordTableOfContents) tableOfContentsMarkdown += '- [Tests](#tests)\n\n';
                     }
                     break;
                 case "susage":
-                    mk = getUsageMarkdown(data);
-                    if (mk !== '') {
-                        markdown.push(mk);
+                    if (data !== '') {
+                        markdown.push(getUsageMarkdown(data));
                         if (recordTableOfContents) tableOfContentsMarkdown += '- [Usage](#usage)\n\n';
                     }
                     break;
                 case "scontribution":
-                    mk = getContributionMarkdown(data);
-                    if (mk !== '') {
-                        markdown.push(mk);
+                    if (data !== '') {
+                        markdown.push(getContributionMarkdown(data));
                         if (recordTableOfContents) tableOfContentsMarkdown += '- [Contribution](#contribution)\n\n';
                     }
                     break;
                 case "scredits":
-                    mk = getCreditsMarkdown(data);
-                    if (mk !== '') {
-                        markdown.push(mk);
+                    if (data !== '') {
+                        markdown.push(getCreditsMarkdown(data));
                         if (recordTableOfContents) tableOfContentsMarkdown += '- [credits](#credits)\n\n';
                     }
                     break;
                 case "slicense":
-                    mk = getLicenseMarkdown(data, licenseObj);
-                    if (mk !== '') {
-                        markdown.push(mk);
+                    if (data !== 'No License') {
+                        markdown.push(getLicenseMarkdown(data, licenseObj));
                         if (recordTableOfContents) tableOfContentsMarkdown += '- [License](#license)\n\n';
                     }
                     break;

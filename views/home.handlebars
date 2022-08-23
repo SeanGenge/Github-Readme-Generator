@@ -2,12 +2,12 @@
     <div class="row justify-content-center">
         <div class="col-xl-7 col-md-10 col-sm-12">
             <form id="readme-form">
-                <button type="submit" class="btn btn-primary" id="generate-readme">Generate Readme</button>
                 <div id="section-container">
                     {{#each sections as |section|}}
                         {{> sectionCard section=section sectionTypes=../SectionTypes}}
                     {{/each}}
                 </div>
+                <button type="submit" class="btn btn-primary float-end" id="generate-readme">Generate Readme</button>
             </form>
         </div>
     </div>

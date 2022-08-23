@@ -2,6 +2,9 @@
     <div class="card-body">
         <h5 class="card-title">{{section.title}}</h5>
         <p class="card-text">{{section.description}}</p>
+        {{#ifEquals section.id "stoc"}}
+            <input class="d-none" id="{{section.id}}" name="{{section.name}}"></input>
+        {{/ifEquals}}
         {{#ifEquals section.type sectionTypes.singleLine}}
             <input class="form-control" id="{{section.id}}" name="{{section.title}}">{{section.data}}</input>
         {{/ifEquals}}

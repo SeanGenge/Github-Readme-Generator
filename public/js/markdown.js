@@ -15,6 +15,10 @@ async function generateReadme(e) {
         // Get the license badge and link
         let licenseObj = license in licenseData ? licenseData[license] : {};
         let markdown = [];
+        // Generate the table of contents as the markdown is being generated
+        let tableOfContentsMarkdown = '## Table of Contents\n';
+        // Change to true when it sees the table of contents card. Only then will it record table of contents
+        let recordTableOfContents = false;
         
         for (let i = 0; i < elements.length; i++) {
             let element = elements[i];
@@ -33,36 +37,65 @@ async function generateReadme(e) {
                     break;
                 case "sdescription":
                     mk = getDescriptionMarkdown(data);
-                    if (mk !== '') markdown.push(mk);
+                    if (mk !== '') {
+                        markdown.push(mk);
+                        if (recordTableOfContents) tableOfContentsMarkdown += '- [Description](#description)\n\n';
+                    }
+                    break;
+                case "stoc":
+                    recordTableOfContents = true;
+                    markdown.push("[toc]");
                     break;
                 case "sinstallation":
                     mk = getInstallationMarkdown(data);
-                    if (mk !== '') markdown.push(mk);
+                    if (mk !== '') {
+                        markdown.push(mk);
+                        if (recordTableOfContents) tableOfContentsMarkdown += '- [Installation](#installation)\n\n';
+                    } 
                     break;
                 case "stests":
                     mk = getTestsMarkdown(data);
-                    if (mk !== '') markdown.push(mk);
+                    if (mk !== '') {
+                        markdown.push(mk);
+                        if (recordTableOfContents) tableOfContentsMarkdown += '- [Tests](#tests)\n\n';
+                    }
                     break;
                 case "susage":
                     mk = getUsageMarkdown(data);
-                    if (mk !== '') markdown.push(mk);
+                    if (mk !== '') {
+                        markdown.push(mk);
+                        if (recordTableOfContents) tableOfContentsMarkdown += '- [Usage](#usage)\n\n';
+                    }
                     break;
                 case "scontribution":
                     mk = getContributionMarkdown(data);
-                    if (mk !== '') markdown.push(mk);
+                    if (mk !== '') {
+                        markdown.push(mk);
+                        if (recordTableOfContents) tableOfContentsMarkdown += '- [Contribution](#contribution)\n\n';
+                    }
                     break;
                 case "scredits":
                     mk = getCreditsMarkdown(data);
-                    if (mk !== '') markdown.push(mk);
+                    if (mk !== '') {
+                        markdown.push(mk);
+                        if (recordTableOfContents) tableOfContentsMarkdown += '- [credits](#credits)\n\n';
+                    }
                     break;
                 case "slicense":
                     mk = getLicenseMarkdown(data, licenseObj);
-                    if (mk !== '') markdown.push(mk);
+                    if (mk !== '') {
+                        markdown.push(mk);
+                        if (recordTableOfContents) tableOfContentsMarkdown += '- [License](#license)\n\n';
+                    }
                     break;
             }
         }
         
-        console.log(markdown.join("\n\n"));
+        // Add the table of contents where the toc marker is
+        markdown.splice(markdown.findIndex((ele) => ele === "[toc]"), 1, tableOfContentsMarkdown);
+        let result = markdown.join("\n\n");
+        
+        console.log(result);
     }
     catch(err) {
         console.log(err);

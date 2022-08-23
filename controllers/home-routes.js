@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const loadSections = require('../seeds/loadSectionData');
+const loadSections = require('../seeds/loadData');
 const enums = require('../utils/enums');
 
 router.get('/', async (req, res) => {

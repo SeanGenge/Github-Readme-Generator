@@ -1,45 +1,55 @@
 [
     {
+        "id": "stitle",
         "title": "Project Title",
         "type": "singleLine",
         "description": "What is your project called?"
     },
     {
+        "id": "sdescription",
         "title": "Description",
         "type": "multiLine",
         "description": "What is your project?"
     },
     {
+        "id": "stoc",
         "title": "Table of contents",
         "type": "nothing",
         "description": "Displays the table of contents. The order is exactly the same that appears here"
     },
     {
+        "id": "sinstallation",
         "title": "Installation",
         "type": "multiLine",
-        "description": "How do you install dependencies or setup your project?"
+        "description": "How do you install dependencies or setup your project?",
+        "data": "To install the necessary dependencies, run the following command:\r```\rnpm i\r```"
     },
     {
+        "id": "stests",
         "title": "Tests",
         "type": "multiLine",
         "description": "What do you use to run tests and how do you use your tests?"
     },
     {
+        "id": "susage",
         "title": "How to use the project",
         "type": "multiLine",
         "description": "Any instructions on how to use the project"
     },
     {
+        "id": "scontribution",
         "title": "How to contribute",
         "type": "multiLine",
         "description": "How do you contribute to this repo"
     },
     {
+        "id": "scredits",
         "title": "credits",
         "type": "multiLine",
         "description": "Anyone else you would like to credit? As well as websites/repos you got inspiration from?"
     },
     {
+        "id": "slicense",
         "title": "License",
         "type": "dropDown",
         "description": "What licence does your project use?",

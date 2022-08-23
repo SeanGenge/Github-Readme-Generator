@@ -1,4 +1,4 @@
-function createSortableSections() {
+function initSortableSections() {
     let sectionContainer = document.getElementById("section-container");
     
     new Sortable(sectionContainer, {
@@ -7,4 +7,4 @@ function createSortableSections() {
     });
 }
 
-createSortableSections();
+initSortableSections();

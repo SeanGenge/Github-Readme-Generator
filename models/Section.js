@@ -1,6 +1,7 @@
 // Class section
 class Section {
-    constructor(title, type, description, data = "", options = []) {
+    constructor(id, title, type, description, data = "", options = []) {
+        this.id = id;
         this.title = title;
         this.type = type;
         this.description = description;

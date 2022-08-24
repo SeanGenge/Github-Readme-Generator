@@ -1,7 +1,7 @@
 # Github readme generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-This readme file was generated using this generator! Images, however were manually added at this time.
+This readme file was generated using this generator! Images, however were manually added at this time. The website is deployed at https://generate-github-readme.herokuapp.com/
 
 This generator allows you to quickly make a readme file without worrying about formatting or manually creating a table of contents. some of the features are listed below:
 

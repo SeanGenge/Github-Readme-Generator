@@ -146,6 +146,14 @@ function getLicenseMarkdown(data, licenseObj) {
     return `## License\nThis project is licensed under the [${data.toUpperCase()}](${licenseLink}) license`;
 }
 
+function copyToClipboard(input) {
+    // Copies data from an input to the clipboard
+    input.select();
+    input.setSelectionRange(0, 99999); // For mobile devices
+    
+    navigator.clipboard.writeText(input.value);
+}
+
 function replaceNewLines(data) {
     // Markdown requires an empty line between the text to be on a new line
     return data.replaceAll("\n", "\n\n");
@@ -154,3 +162,7 @@ function replaceNewLines(data) {
 document.getElementById("generate-readme").addEventListener("click", (e) => {
     generateReadme(e);
 });
+
+document.getElementById("copy-clipboard").addEventListener("click", (e) => {
+    copyToClipboard(document.getElementById("generated-readme"));
+})

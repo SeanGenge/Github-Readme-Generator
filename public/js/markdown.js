@@ -85,8 +85,9 @@ async function generateReadme(e) {
         // Add the table of contents where the toc marker is
         markdown.splice(markdown.findIndex((ele) => ele === "[toc]"), 1, tableOfContentsMarkdown);
         let result = markdown.join("\n\n");
+        let markdownDisplay = document.getElementById("generated-readme");
         
-        console.log(result);
+        markdownDisplay.value = result;
     }
     catch(err) {
         console.log(err);

@@ -29,6 +29,18 @@ header {
     margin-bottom: 25px;
 }
 
+.custom-readme-card {
+    margin-top: 15px;
+}
+
+#generated-readme {
+    width: 100%;
+}
+
+#copy-clipboard {
+    margin-top: 15px;
+}
+
 @media (min-width: 992px) {
     .custom-row {
         /* Flip the info and sections */

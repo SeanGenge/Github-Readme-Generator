@@ -34,4 +34,9 @@ header {
         /* Flip the info and sections */
         flex-direction: row-reverse;
     }
+    
+    .info {
+        position: sticky;
+        top: 15px;
+    }
 }

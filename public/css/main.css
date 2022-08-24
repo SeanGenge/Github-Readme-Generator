@@ -4,8 +4,7 @@
 }
 
 .custom-card {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .handle {
@@ -13,8 +12,26 @@
     padding-bottom: 15px;
 }
 
-header,
 footer {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+header {
+    margin-bottom: 15px;
+}
+
+.custom-row {
+    justify-content: center;
+}
+
+.info {
+    margin-bottom: 25px;
+}
+
+@media (min-width: 992px) {
+    .custom-row {
+        /* Flip the info and sections */
+        flex-direction: row-reverse;
+    }
 }

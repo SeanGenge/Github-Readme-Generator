@@ -1,6 +1,11 @@
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-xl-7 col-md-10 col-sm-12">
+    <div class="row custom-row">
+        <div class="col-md-6 col-sm-12">
+            <div class="info">
+                {{> info}}
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
             <form id="readme-form">
                 <div id="section-container">
                     {{#each sections as |section|}}
